@@ -9,7 +9,6 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-
 int main()
 {
 	setlocale(LC_ALL, ""); // работает только с потоком вывода
@@ -30,13 +29,18 @@ int main()
 
 	int count{ 0 };
 
-	for (int i = 0;  i < arrSize; i++)
+	for (int i = 0; i < arrSize; i++)
 	{
-		if (arr)
+		for (int j = 2; j <= arr[i]; j++) // Проверка до number.
 		{
-
+			if (arr[i] % j == 0) // Если найден другой делитель числа.
+			{
+				if (arr[i] != j)
+					break;
+				cout << arr[i] << ' ';
+				break;
+			}
 		}
-
 	}
 
 	return 0;
